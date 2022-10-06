@@ -1,0 +1,16 @@
+.man{
+    display: block;
+    width: 500px;
+    margin: auto;
+    z-index: 1;
+    position: sticky;
+}
+.stone1, .stone2{
+    position: relative;
+    left: 400px;
+}
+
+.tree{
+    position: fixed;
+    
+}
