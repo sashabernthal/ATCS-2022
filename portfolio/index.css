@@ -1,0 +1,25 @@
+.header {
+    color: white;
+    text-align: center;
+}
+
+.body{
+    background-color: #757B93;
+}
+
+img {
+    height: 100px;
+    width: 300px;
+    display: block;
+    position: static;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+}
+
+ul {
+    color: white;
+    text-align: center;
+    list-style: none;
+    font-size: 20px;
+}
