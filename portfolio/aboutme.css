@@ -1,6 +1,7 @@
 .header {
     color: white;
     position: absolute;
+    top: 0;
     left: 50vw;
 }
 
@@ -17,14 +18,16 @@ p {
 img {
     opacity: 50%;
     height: 500px;
-    width: 100%
-
+    width: 100%;
 }
 
-ul {
+ul{
     text-align: center;
     list-style: none;
     font-size: 10px;
+}
+
+a {
     color: white;
 }
 
