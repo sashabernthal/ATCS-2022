@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.body{
+body{
     background-color: #757B93;
 }
 
@@ -18,8 +18,13 @@ img {
 }
 
 ul {
-    color: white;
     text-align: center;
     list-style: none;
     font-size: 20px;
 }
+
+a {
+    color: white;
+}
+
+/*I connected each page to this CSS sheet, as well as their own, to avoid repeating code like I did in lab04*/

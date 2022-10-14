@@ -1,3 +1,34 @@
-.container {
-    display: flex;
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 400px 400px;
+    grid-gap: 10px;
+    color: #444;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.experience {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+}
+
+.header {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50vw;
+}
+
+img {
+    width: 250px;
+    height: auto;
+    justify-self: center;
+}
+
+p {
+    text-align: center;
 }

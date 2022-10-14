@@ -12,7 +12,8 @@ body {
 
 p {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+    text-align: center;
 }
 
 img {
@@ -21,14 +22,13 @@ img {
     width: 100%;
 }
 
-ul{
-    text-align: center;
-    list-style: none;
-    font-size: 10px;
-}
-
-a {
+.contact {
+    border: 10px solid #464C65;
+    font-size: 20px;
+    background-color: #464C65;
+    height: 170px;
     color: white;
+    line-height: 50%;
 }
 
 
