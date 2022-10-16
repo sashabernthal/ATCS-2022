@@ -8,13 +8,15 @@
     margin-top: 100px;
 }
 
-.experience {
+div.experience {
     background-color: #444;
     color: #fff;
     border-radius: 5px;
     padding: 20px;
     font-size: 150%;
 }
+
+/* I combined a class and a tag to prove I can use them combined for Lab03 */
 
 .header {
     color: white;
