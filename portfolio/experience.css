@@ -14,20 +14,12 @@ div.experience {
     border-radius: 5px;
     padding: 20px;
     font-size: 150%;
-}
-
-/* I combined a class and a tag to prove I can use them combined for Lab03 */
-
-.header {
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 50vw;
+    width: 100vw;
 }
 
 img {
-    width: 80%;
-    max-height: 80vh;
+    max-width: 120vh;
+    max-height: 70vh;
     height: auto;
     justify-self: center;
 }

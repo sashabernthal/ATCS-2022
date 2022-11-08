@@ -29,18 +29,8 @@ a {
     color: #5B305F;
 }
 
-.navcolor {
-    background-color: #F1D8F2;
-}
-
  a:hover{
     color: #1A0C1B;
-}
-
-.logosize {
-    width: 50px;
-    height: 50px;
-    justify-self: left;
 }
 
 /* CSS used here will be applied after bootstrap.css */
