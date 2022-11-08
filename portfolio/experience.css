@@ -1,7 +1,7 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 400px 400px;
+    grid-template-columns: 100%;
+    grid-template-rows: 100vh 100vh 100vh 100vh 100vh 100vh;
     grid-gap: 10px;
     color: #444;
     justify-content: space-between;
@@ -9,7 +9,7 @@
 }
 
 div.experience {
-    background-color: #444;
+    background-color: rgba(91, 48, 95, 0.2);
     color: #fff;
     border-radius: 5px;
     padding: 20px;
@@ -26,7 +26,8 @@ div.experience {
 }
 
 img {
-    width: 250px;
+    width: 80%;
+    max-height: 80vh;
     height: auto;
     justify-self: center;
 }
