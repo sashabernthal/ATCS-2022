@@ -77,7 +77,11 @@ a {
     height:calc(90% - 50px);
     height: 90vh;
   }
-  
+
+.navbar-light {
+    justify-content: right;
+ }
+
 /*https://www.codeply.com/go/xp2fY6sVHP/bootstrap-navbar-over-background-image-animated*/
 
 /*I connected each page to this CSS sheet, as well as their own, to avoid repeating code like I did in lab04*/
