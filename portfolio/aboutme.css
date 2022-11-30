@@ -1,15 +1,3 @@
-.header {
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 50vw;
-}
-
-body {
-    background-color: #757B93;
-    margin: 0px;
-}
-
 p {
     color: white;
     font-size: 20px;
@@ -17,18 +5,41 @@ p {
 }
 
 img {
-    opacity: 50%;
-    height: 500px;
-    width: 100%;
+    opacity: 60%;
+    height: 100vh;
+    position: relative;
 }
 
 .contact {
-    border: 10px solid #464C65;
     font-size: 20px;
-    background-color: #464C65;
-    height: 170px;
-    color: white;
-    line-height: 50%;
+    background-color: #B4A8B5;
+    color: #5B305F;
+    top: 0;
+    font-family: serif;
+    color: #5B305F;
 }
 
+.contactdropdown {
+    background-color: #B4A8B5;
+    border: 0px; 
+}
 
+.button {
+    text-align: left;
+    border: 0px;
+}
+
+.contact:hover {
+    background-color: #5B305F;
+    color: #B4A8B5;
+    border: 0px;
+}
+
+.text {
+    position: absolute;
+    margin-top: 637px;
+    z-index: 1;
+    color: #5B305F;
+    border: 3px solid #5B305F;
+    background-color: rgba(180, 168, 181, .7)
+}

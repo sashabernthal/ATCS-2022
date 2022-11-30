@@ -1,7 +1,7 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 400px 400px;
+    grid-template-columns: 100%;
+    grid-template-rows: 100vh 100vh 100vh 100vh 100vh 100vh;
     grid-gap: 10px;
     color: #444;
     justify-content: space-between;
@@ -9,24 +9,17 @@
 }
 
 div.experience {
-    background-color: #444;
+    background-color: rgba(91, 48, 95, 0.2);
     color: #fff;
     border-radius: 5px;
     padding: 20px;
     font-size: 150%;
-}
-
-/* I combined a class and a tag to prove I can use them combined for Lab03 */
-
-.header {
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 50vw;
+    width: 100vw;
 }
 
 img {
-    width: 250px;
+    max-width: 120vh;
+    max-height: 70vh;
     height: auto;
     justify-self: center;
 }
