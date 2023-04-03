@@ -51,12 +51,12 @@ class Twitter:
             username = input("What username would you like?")
             password = input("What do you want your password to be?")
             password_check = input("Please enter your password again.")
-            pass_check = db_session.query(User).where(User.username == username).all()
-            if (password_check == password and pass_check == None):
+            pass_check = db_session.query(User).filter(User.username == username).all()
+            if (password_check == password and len(pass_check) == 0):
                 break
             else:
                 print("Error. Passwords don't match. Please try again.")
-        new_user = username(username, password)
+        new_user = User(username=username, password=password)
         self.logged_in = True
         self.current_user = new_user
         db_session.add(new_user)
@@ -74,8 +74,8 @@ class Twitter:
         while(True):
             username = input("Input username:")
             password = input("Input password:")
-            account = db_session.query(User).where(User.password == password and User.username == username).first()
-            if(account.username == username and account.password == password):
+            account = db_session.query(User).filter(User.password == password and User.username == username).first()
+            if account is not None and account.username == username and account.password == password:
                 break
             else:
                 print("Incorrect login information, please try again.")
@@ -86,6 +86,8 @@ class Twitter:
     
     def logout(self):
         self.logged_in = False
+        self.current_user = None
+        print("Logout succesful.")
 
     """
     Allows the user to login,  
@@ -93,17 +95,56 @@ class Twitter:
     """
     
     def startup(self):
-        pass
+        print("Welcome to Twitter!")
+        while True:
+            option = input("Enter login to login, register to register, or exit to exit.")
+            if option == "login":
+                self.login()
+                break
+            elif option == "register":
+                self.register_user()
+                break
+            elif option == "exit":
+                print("Exiting.")
+                self.end()
+            else:
+                print("Please try again.")
+                
 
     def follow(self):
-        following_id = input("Who would you like to follow?")
-        following_user = db_session.query()
-
-    def unfollow(self):
+        while True:
+            username = input("Enter the user's name who you would like to follow. ")
+            follow_user = db_session.query(User).where(User.username==username).first()
+            if follow_user:
+                break
+            else:
+                print("Cannot find user.")
         
+        self.current_user.following.append(follow_user)
+        db_session.commit()
+        print("You followed @" + username)
+
+
+    def unfollow(self, current_user_id, unfollowing_id):
+        current_user = db_session.query(User).filter_by(id=current_user_id).first()
+        unfollowing = db_session.query(User).filter_by(id=unfollowing_id).first()
+        current_user.following.remove(unfollowing)
+        db_session.commit()
+        print("You unfollowed @" + unfollowing)
 
     def tweet(self):
-        pass
+        tweet = input("Please write what you wanna tweet.")
+        tags = input("What tags would you like to add to your tweet?")
+        if tweet and tags:
+            tag_list = tags.split()
+            create_tweet = Tweet(tweet, datetime.now(), self.current_user.username)
+            for tag in tag_list:
+                create_tag = Tag(tag)
+                create_tweet.tags.append(create_tag)
+        db_session.add(create_tweet)
+        db_session.commit()
+        print(create_tweet)
+
     
     def view_my_tweets(self):
         pass
