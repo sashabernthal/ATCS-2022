@@ -72,7 +72,6 @@ class Tag(Base):
 
     id = Column("id", INTEGER, primary_key=True)
     content = Column('content', TEXT)
-    tweets = relationship("Tweet", secondary="tweettag", back_populates="tags")
 
     def __init__(self, content):
         self.content = content

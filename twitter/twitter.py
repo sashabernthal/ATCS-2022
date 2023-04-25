@@ -147,20 +147,31 @@ class Twitter:
 
     
     def view_my_tweets(self):
-        pass
-    
+        result = db_session.query(Tweet).filter(self.current_user.username == Tweet.username).all()
+        for tweet in result:
+            print(tweet)
     """
     Prints the 5 most recent tweets of the 
     people the user follows
     """
     def view_feed(self):
-        pass
+        tweets = db_session.query(Tweet).join(Follower, Tweet.username == Follower.following_id).where(self.current_user.username == Follower.follower_id).order_by(Tweet.timestamp.desc()).limit(5).all()
+        for tweet in tweets:
+            print(tweet)
 
     def search_by_user(self):
-        pass
+        username = input("Enter the username of the user who's tweets you want to see: ")
+        tweets = db_session.query(Tweet).filter_by(username=username).all()
+        print("Tweets by " + username)
+        for tweet in tweets:
+            print(tweet)
 
     def search_by_tag(self):
-        pass
+        tag_search = input("Enter the tag you'd like to search for: ")
+        tags = db_session.query(Tag).filter_by(tag_search = Tag.content).all()
+        # for tag in tags:
+        #     tweet = tag_search
+        #     print(tweet)
 
     """
     Allows the user to select from the 
